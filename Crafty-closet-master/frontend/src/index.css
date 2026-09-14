@@ -1,0 +1,81 @@
+/* frontend/src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html  { scroll-behavior: smooth; }
+  body  { font-family: 'DM Sans', system-ui, sans-serif; background: #fff8f5; color: #3d1a2e; }
+  h1,h2,h3,h4 { font-family: 'Playfair Display', serif; }
+  ::-webkit-scrollbar       { width: 5px; }
+  ::-webkit-scrollbar-track { background: #fce4ec; }
+  ::-webkit-scrollbar-thumb { background: #f4a7b9; border-radius: 3px; }
+}
+
+@layer components {
+  /* ── Buttons ─────────────────────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full
+           bg-gradient-to-br from-rose-300 to-rose-600 text-white font-semibold text-sm
+           shadow-rose-sm hover:shadow-rose-md hover:-translate-y-0.5
+           transition-all duration-200 cursor-pointer
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full
+           border-2 border-rose-400 text-rose-700 font-semibold text-sm
+           hover:bg-rose-400 hover:text-white transition-all duration-200 cursor-pointer;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg
+           text-rose-500 font-medium text-sm hover:bg-rose-100 transition-colors cursor-pointer;
+  }
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg
+           bg-red-500 text-white font-semibold text-sm hover:bg-red-600 transition-colors cursor-pointer;
+  }
+  .btn-google {
+    @apply inline-flex items-center justify-center gap-3 px-5 py-2.5 rounded-full w-full
+           bg-white border border-gray-200 text-gray-700 font-semibold text-sm
+           hover:bg-gray-50 hover:shadow-md transition-all duration-200 cursor-pointer;
+  }
+  .btn-github {
+    @apply inline-flex items-center justify-center gap-3 px-5 py-2.5 rounded-full w-full
+           bg-gray-900 border border-gray-800 text-white font-semibold text-sm
+           hover:bg-gray-800 hover:shadow-md transition-all duration-200 cursor-pointer;
+  }
+
+  /* ── Form controls ───────────────────────────────────────── */
+  .form-input {
+    @apply w-full px-4 py-2.5 border border-rose-200 rounded-lg bg-white text-rose-900 text-sm
+           placeholder-rose-300 outline-none transition-all duration-200
+           focus:border-rose-400 focus:ring-2 focus:ring-rose-100;
+  }
+  .form-label {
+    @apply block text-xs font-bold text-rose-400 uppercase tracking-widest mb-1.5;
+  }
+  .form-error { @apply text-red-500 text-xs mt-1; }
+
+  /* ── Card ────────────────────────────────────────────────── */
+  .card { @apply bg-white rounded-2xl border border-rose-100 shadow-rose-sm; }
+
+  /* ── Status badges ───────────────────────────────────────── */
+  .badge-pending    { @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-700; }
+  .badge-processing { @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-700; }
+  .badge-shipped    { @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-700; }
+  .badge-delivered  { @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-700; }
+  .badge-cancelled  { @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 text-red-700; }
+
+  /* ── Table ───────────────────────────────────────────────── */
+  .tbl th { @apply text-left py-3 px-4 text-xs font-bold text-rose-400 uppercase tracking-wider bg-rose-50 border-b border-rose-100 whitespace-nowrap; }
+  .tbl td { @apply py-3 px-4 border-b border-rose-50 text-sm align-middle; }
+  .tbl tr:last-child td { @apply border-b-0; }
+  .tbl tbody tr:hover td { @apply bg-rose-50/50; }
+
+  /* ── Skeleton ────────────────────────────────────────────── */
+  .skeleton { @apply bg-rose-100 rounded-lg animate-pulse; }
+
+  /* ── Page container ──────────────────────────────────────── */
+  .page-container { @apply max-width-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10; }
+}

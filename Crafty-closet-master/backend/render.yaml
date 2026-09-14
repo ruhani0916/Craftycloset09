@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: crafty-closet-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      # Set these in the Render dashboard → Environment tab:
+      # MYSQL_URL          = mysql://avnadmin:PASSWORD@HOST:PORT/defaultdb?ssl-mode=REQUIRED
+      # FIREBASE_SERVICE_ACCOUNT = <base64-encoded service account JSON>
+      # CLIENT_URL         = https://crafty-closet-5dc41.web.app
+      # SENDGRID_API_KEY   = SG.xxxxxxxxxxxxxxxxxxxx
+      # MAIL_FROM          = avu0000001@gmail.com

@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment variables — NEVER commit secrets
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Build outputs
+frontend/dist/
+frontend/build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Firebase
+.firebase/
+firebase-debug.log
+
+# Uploads (user-uploaded files — should be stored in cloud storage in production)
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Test coverage
+backend/coverage/
+frontend/coverage/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Railway local CLI state
+.railway/

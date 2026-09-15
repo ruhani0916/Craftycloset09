@@ -14,7 +14,7 @@ services:
       - key: FIREBASE_SERVICE_ACCOUNT
         sync: false
       - key: CLIENT_URL
-        value: https://crafty-closet-5dc41.web.app
+        value: https://craftycloset09.web.app
       - key: CLOUDINARY_CLOUD_NAME
         sync: false
       - key: CLOUDINARY_API_KEY
